@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Tchaoussoff | Portfolio BTS SIO SISR</title>
+    <title>Lucas Tchaoussoff | Portfolio Numérique</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-body: #f4f6f4;          /* Fond clair adouci, teinté nature */
-            --bg-card: #ffffff;          /* Blanc doux pour les cartes */
-            --primary: #4a6b5d;          /* Vert sauge / forêt (côté nature) */
-            --primary-light: #e8efe9;    /* Pastel clair pour badges et surbrillance */
-            --text-main: #2d3732;        /* Gris/vert très foncé pour le texte */
-            --text-muted: #627269;       /* Gris intermédiaire */
-            --accent-code: #3b5249;     /* Style terminal adouci */
-            --border: #d8e2dc;           /* Bordure discrète */
+            --bg-body: #eef2ef;          
+            --bg-card: #f6f8f6;          
+            --primary: #4a6b5d;          
+            --primary-light: #dfe6e1;    
+            --text-main: #25332c;        
+            --text-muted: #586b62;       
+            --border: #ccd6d0;           
+            --shadow: 0 12px 32px rgba(40, 56, 48, 0.08);
         }
 
         * {
@@ -31,70 +31,218 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
-            padding-bottom: 60px;
+            padding-bottom: 100px;
+            overflow-x: hidden;
         }
 
-        /* Navigation en haut */
+        /* Barre de navigation élargie */
         header {
             position: sticky;
-            top: 0;
-            background: rgba(244, 246, 244, 0.9);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
+            top: 15px;
             z-index: 100;
+            width: 100%;
+            padding: 0 2rem;
         }
 
         nav {
-            max-width: 900px;
-            margin: 0 auto;
+            background: rgba(246, 248, 246, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
+            padding: 0.9rem 2.5rem;
+            box-shadow: var(--shadow);
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            font-size: 1.1rem;
         }
 
         .logo {
             font-family: 'Fira Code', monospace;
             font-weight: 600;
             color: var(--primary);
-            text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            align-items: center;
+            gap: 1.2rem;
             list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li:not(:last-child):after {
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            background-color: var(--border);
+            margin-left: 1.2rem;
+            opacity: 0.6;
+            vertical-align: middle;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-muted);
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            display: inline-block;
         }
 
         .nav-links a:hover {
             color: var(--primary);
+            transform: scale(1.08);
         }
 
         /* Container principal */
         main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
+            max-width: 1100px;
+            margin: 4rem auto 0 auto;
+            padding: 0 2rem;
         }
 
         section {
-            margin-bottom: 3.5rem;
+            margin-bottom: 7rem;
+        }
+
+        /* Style Asymétrique "Canva Art" pour la présentation */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            align-items: center;
+            gap: 3rem;
+            padding: 2rem 0;
+            position: relative;
+            transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+            will-change: transform, opacity;
+        }
+
+        /* Lignes de structure vertes légères (effet design architectural) */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 120px;
+            height: 2px;
+            background-color: var(--primary);
+            opacity: 0.4;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            width: 180px;
+            height: 2px;
+            background-color: var(--primary);
+            opacity: 0.2;
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .hero-left h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-left .subtitle {
+            font-family: 'Fira Code', monospace;
+            color: var(--primary);
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .hero-tag {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Cadre artistique autour de la photo */
+        .hero-right::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            opacity: 0.25;
+            z-index: -1;
+        }
+
+        .hero-img {
+            width: 240px;
+            height: 300px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+        }
+
+        /* Section "À propos" détaillée */
+        .about-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            position: relative;
         }
 
         h2 {
             font-family: 'Fira Code', monospace;
             color: var(--primary);
-            font-size: 1.4rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -106,222 +254,117 @@
             font-weight: bold;
         }
 
-        /* Cartes & Conteneurs */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.8rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-            margin-bottom: 1rem;
-        }
-
-        /* Hero / Présentation */
-        .hero {
-            border-left: 4px solid var(--primary);
-        }
-
-        .hero h1 {
-            font-size: 2rem;
+        .about-text {
+            font-size: 1.05rem;
             color: var(--text-main);
-            margin-bottom: 0.5rem;
-        }
-
-        .hero .subtitle {
-            font-family: 'Fira Code', monospace;
-            color: var(--primary);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Badges de compétences */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.8rem;
-        }
-
-        .tag {
-            background: var(--primary-light);
-            color: var(--primary);
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            padding: 0.3rem 0.7rem;
-            border-radius: 4px;
-            font-weight: 500;
-        }
-
-        /* Grille des compétences */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1rem;
-        }
-
-        .timeline-item {
-            border-left: 2px solid var(--border);
-            padding-left: 1.2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: 5px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--primary);
-        }
-
-        .timeline-date {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            line-height: 1.8;
         }
 
         footer {
             text-align: center;
             font-family: 'Fira Code', monospace;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-top: 3rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-left {
+                align-items: center;
+            }
+            .hero-left h1 {
+                font-size: 2.8rem;
+            }
+            .nav-links li:not(:last-child):after {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Barre de Navigation en Haut -->
+    <!-- Barre de Navigation Élargie -->
     <header>
         <nav>
-            <a href="#" class="logo">lucas@sisr:~ $</a>
+            <a href="index.html" class="logo-container">
+                <span class="nav-logo-icon">📖</span>
+                <span class="logo">Portfolio Numérique</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#presentation">Présentation</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#parcours">Parcours</a></li>
-                <li><a href="#projets">Projets</a></li>
+                <li><a href="index.html">Présentation</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="competences.html">Expériences militaire</a></li>
+                <li><a href="competences.html">Passion</a></li>
+                <li><a href="competences.html">Mécanique</a></li>
+                <li><a href="competences.html">Électronique</a></li>
+                <li><a href="competences.html">Réseau</a></li>
+                <li><a href="competences.html">Programme</a></li>
+                <li><a href="competences.html">Projets</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Section Présentation -->
-        <section id="presentation">
-            <div class="card hero">
-                <h1>Lucas Tchaoussoff</h1>
-                <p class="subtitle">Apprenti Technicien Support Informatique & Administration Réseau</p>
+        <!-- Présentation Asymétrique Style "Canva Art" -->
+        <section id="presentation" class="hero-section">
+            <div class="hero-left">
+                <h1>Lucas<br>Tchaoussoff</h1>
+                <p class="subtitle">Apprenti Technicien Support Informatique</p>
+                
+                <div class="hero-tags">
+                    <span class="hero-tag">👤 21 ans</span>
+                    <span class="hero-tag">🏢 Alternance : AFM-Téléthon</span>
+                    <span class="hero-tag">🏫 UTEC Melun (BTS SIO SISR)</span>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <img src="profil.png" alt="Lucas Tchaoussoff" class="hero-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.0.3';">
+            </div>
+        </section>
+
+        <!-- Section "À propos" détaillée -->
+        <section id="apropos" class="about-section">
+            <h2>À propos</h2>
+            <div class="about-text">
                 <p>
-                    Ancien sous-officier de l'Armée de Terre spécialisé dans la maintenance optronique, je prépare actuellement un BTS SIO (option SISR) à l'UTEC de Melun[cite: 1]. 
-                    Riguoureux, autonome et passionné par les systèmes d'information, j'allie la discipline du milieu militaire à une approche très pratique de la résolution de problèmes informatiques et électroniques.
-                </p>
-                <div class="tags">
-                    <span class="tag">Rigueur militaire</span>
-                    <span class="tag">Troubleshooting</span>
-                    <span class="tag">Esprit d'équipe</span>
-                    <span class="tag">Culture Homelab</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Compétences -->
-        <section id="competences">
-            <h2>01. Compétences Techniques</h2>
-            <div class="skills-grid">
-                <div class="card">
-                    <h3>Réseaux & Infrastructures</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
-                        Configuration d'équipements Cisco, IPv4/v6, DHCP, DNS, NAT, câblage RJ45 et recette fibre optique[cite: 1].
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Cisco iOS</span>
-                        <span class="tag">IPv4/v6</span>
-                        <span class="tag">DHCP/DNS</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Systèmes & Virtualisation</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
-                        Déploiement Windows 10/11 & Linux Ubuntu, gestion des accès, virtualisation via VirtualBox[cite: 1].
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Windows</span>
-                        <span class="tag">Linux</span>
-                        <span class="tag">VirtualBox</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Maintenance & Électronique</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
-                        Diagnostic matériel, mesure (multimètre/oscilloscope), soudures étain/fibre et réparation mécanique[cite: 1].
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Hardware</span>
-                        <span class="tag">Optronique</span>
-                        <span class="tag">Soudure</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Parcours -->
-        <section id="parcours">
-            <h2>02. Parcours & Expériences</h2>
-            <div class="card">
-                <div class="timeline-item">
-                    <span class="timeline-date">2026 - 2028</span>
-                    <h3>BTS SIO option SISR (en Alternance)</h3>
-                    <p>UTEC Melun — Apprenti Technicien Support Informatique[cite: 1].</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">Janvier 2025 - Septembre 2025</span>
-                    <h3>Affectation au 68ème Régiment d'Artillerie d'Afrique</h3>
-                    <p>Support informatique de proximité, maintenance PC et parc d'impression en unité[cite: 1].</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2024 - 2025</span>
-                    <h3>Formation Opto-Électronique & Sous-Officier (ENSOA)</h3>
-                    <p>Écoles Militaires de Bourges & Saint-Maixent — Apprentissage du commandement et maintenance des systèmes de visée complexes[cite: 1].</p>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">2022 - 2024</span>
-                    <h3>Baccalauréat Pro Systèmes Numériques (SN-RISC)</h3>
-                    <p>École Militaire Préparatoire Technique (EMPT) de Bourges — Mention Bien[cite: 1].</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Projets -->
-        <section id="projets">
-            <h2>03. Projets & Homelab</h2>
-            <div class="card">
-                <h3>Maquette Réseau Multi-VLAN (Cisco Packet Tracer)</h3>
-                <p style="font-size: 0.95rem; margin-top: 0.5rem;">
-                    Conception et mise en œuvre d'un réseau d'entreprise simulé comprenant l'isolation par VLAN, le routage inter-VLAN et un serveur DHCP dédié.
-                </p>
-            </div>
-            <div class="card">
-                <h3>Environnement de Lab VirtualBox</h3>
-                <p style="font-size: 0.95rem; margin-top: 0.5rem;">
-                    Déploiement de machines virtuelles Linux et Windows pour l'expérimentation de scripts de déploiement et la gestion des droits d'accès.
-                </p>
-            </div>
-            <div class="card">
-                <h3>Projets Personnels : Électronique & Mécanique</h3>
-                <p style="font-size: 0.95rem; margin-top: 0.5rem;">
-                    Diagnostic de pannes matérielles, intégration de composants électroniques et maintenance autodidacte d'équipements mécaniques.
+                    Après une expérience militaire dans la maintenance optronique, je prépare actuellement mon BTS SIO option SISR à l'UTEC de Melun en alternance en tant qu'apprenti support informatique chez AFM-Téléthon. 
+                    Rigoureux, discipliné et autonome, j'allie mon parcours et mes valeurs militaires à une approche technique et méthodique de la résolution de problèmes informatiques, réseaux et systèmes.
                 </p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© Lucas Tchaoussoff — Portfolio hébergé sur GitHub Pages</p>
+        <p>© 2026 — Lucas Tchaoussoff</p>
     </footer>
+
+    <!-- Script de glissement au scroll -->
+    <script>
+        const heroSection = document.getElementById('presentation');
+
+        window.addEventListener('scroll', () => {
+            let scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 100) {
+                let adjustedScroll = scrollPosition - 100;
+                let moveRight = adjustedScroll * 0.7; 
+                let opacityValue = 1 - (adjustedScroll / 300);
+
+                if (opacityValue < 0) opacityValue = 0;
+
+                heroSection.style.transform = `translateX(${moveRight}px)`;
+                heroSection.style.opacity = opacityValue;
+            } else {
+                heroSection.style.transform = `translateX(0px)`;
+                heroSection.style.opacity = 1;
+            }
+        });
+    </script>
 
 </body>
 </html>
